@@ -9,16 +9,18 @@ import {
 import { Typography, makeStyles, AppBar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Item from "./Item";
+import { PRIMARY_COLOR, WHITE } from "../../styles/colors.styles";
+import logo from "../../assets/logo.png";
 
 const menu = [
-  {
-    title: "Home",
-    component: "/",
-  },
-  {
-    title: "Skills",
-    component: "/skills",
-  },
+  // {
+  //   title: "Announcements",
+  //   component: "/",
+  // },
+  // {
+  //   title: "Human Resources",
+  //   component: "/",
+  // },
 ];
 
 const NavMenu = () => {
@@ -30,7 +32,7 @@ const NavMenu = () => {
     <AppBar
       elevation={0}
       position="fixed"
-      style={{ boxShadow: "none", background: "#FFFF" }}
+      style={{ boxShadow: "none", background: PRIMARY_COLOR }}
     >
       <Navbar
         className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow"
@@ -38,8 +40,21 @@ const NavMenu = () => {
       >
         <Container>
           <NavbarBrand tag={Link} to="/">
-            <div>
-              <Typography className={classes.title}>INITIALS</Typography>
+            <div style={{ flexDirection: "row", display: "flex" }}>
+              <img
+                src={logo}
+                style={{ width: 45, height: 45, borderRadius: 500 }}
+              />
+              <Typography
+                style={{
+                  alignSelf: "center",
+                  paddingLeft: 10,
+                  color: WHITE,
+                  fontWeight: "bolder",
+                }}
+              >
+                Announcement Management
+              </Typography>
             </div>
           </NavbarBrand>
           <NavbarToggler
