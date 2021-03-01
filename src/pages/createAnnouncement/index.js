@@ -5,13 +5,26 @@ import {
   makeStyles,
   Select,
   MenuItem,
-  Button,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import { PADDING_TOP } from "../../styles/dimens.styles";
-import { LIGHT_GRAY, PRIMARY_COLOR, WHITE } from "../../styles/colors.styles";
+import CustomButton from "../../components/customButton";
+import {
+  INFO,
+  LIGHT_GRAY,
+  PRIMARY_COLOR,
+  SUCCESS,
+  WHITE,
+} from "../../styles/colors.styles";
 
 const CreateAnnouncement = () => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const backToList = () => {
+    history.push("/");
+  };
+
   return (
     <div className={classes.root}>
       <Typography className={classes.header}>Create Announcement</Typography>
@@ -53,8 +66,16 @@ const CreateAnnouncement = () => {
 
         {/* Buttons */}
         <div className={classes.buttons}>
-          <Button>Back To List</Button>
-          <Button>Publish</Button>
+          <CustomButton
+            backgroundColor={INFO}
+            text="Back To List"
+            onClick={backToList}
+          />
+          <CustomButton
+            backgroundColor={SUCCESS}
+            color={WHITE}
+            text="Publish"
+          />
         </div>
       </Box>
     </div>
