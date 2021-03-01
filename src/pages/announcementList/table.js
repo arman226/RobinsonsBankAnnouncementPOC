@@ -16,7 +16,7 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import { announcements } from "./sampleAnnouncements";
 import { TableHead } from "@material-ui/core";
-import { PRIMARY_COLOR, WHITE } from "../../styles/colors.styles";
+import { WHITE } from "../../styles/colors.styles";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -105,10 +105,6 @@ TablePaginationActions.propTypes = {
   page: PropTypes.number.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
 };
-
-function createData(name, calories, fat) {
-  return { name, calories, fat };
-}
 
 const useStyles2 = makeStyles({
   table: {

@@ -1,4 +1,4 @@
-import { format, formatDistance, formatRelative, subDays } from "date-fns";
+import { formatRelative, subDays } from "date-fns";
 
 const date = formatRelative(subDays(new Date(), 0), new Date());
 
